@@ -1,0 +1,121 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width:100%;
+}
+
+.background-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.img-box {
+  background-size: cover;
+  background-position: center;
+}
+
+
+.img1 {
+  background-image: url('https://res-console.cloudinary.com/dlwfzdhi4/thumbnails/v1/image/upload/v1754020373/NzZjYzE3Y2U2MWVkYmExZjYxMWMyZjA0ZDUwZWQyZmIwYWEwZDY5Y19sdWpkNnQ=/preview');
+  background-size: cover;
+  ;
+}
+.img2 {
+  background-image: url('https://res-console.cloudinary.com/dlwfzdhi4/thumbnails/v1/image/upload/v1754020433/MTcyNjRjMjViMjM5MGU2M2JmMjFlOGYwOTIwNWE1NzU2NTBjOWIzZl9nb2JkZ2E=/preview');
+}
+.img3 {
+  background-image: url('https://res-console.cloudinary.com/dlwfzdhi4/thumbnails/v1/image/upload/v1754020320/OGZhZjAwYmU1ZWI2OWE5M2E2NWFmYmUzZDc0MTM5ZWU1MmQ3Yzg4OF9saHNjMmU=/preview');
+}
+.img4 {
+  background-image: url('https://res-console.cloudinary.com/dlwfzdhi4/thumbnails/v1/image/upload/v1754020230/ZGY0MTM5NzgwOTYzNzc4M2VmZTc3NjQzZjczYjUyNjJiYTEyYmJlYV9hZWdneWY=/preview');
+}
+
+
+.login-card {
+  background-color: white;
+  width: 350px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.login-card .logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.login-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.login-card h2 span {
+  color: green;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Media Queries */
+/* @media screen and (max-width: 768px) {
+  .background-grid {
+    display: none;
+  }
+
+  .login-card {
+    width: 90%;
+    margin: 40px auto;
+  }
+} */
