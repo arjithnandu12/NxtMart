@@ -48,6 +48,8 @@ const ProductSection = () => {
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
+
+          
         </aside>
 
         <main className="flex-1 p-6 overflow-y-auto">
