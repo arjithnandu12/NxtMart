@@ -10,6 +10,7 @@ const LoginForm = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [showerror,setshowerror]=useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const onSubmitSuccess = (jwttoken) => {
         navigate('/');
@@ -81,7 +82,7 @@ const LoginForm = () => {
           <div>
             <label className="block mb-1 text-sm text-gray-700">Password</label>
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'} 
               placeholder="Enter password"
               onChange={onChangepassword}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition"
@@ -89,10 +90,17 @@ const LoginForm = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <input type="checkbox" id="show" className="w-4 h-4" />
-            <label htmlFor="show" className="text-sm text-gray-600">Show Password</label>
+            <input
+              type="checkbox"
+              id="show"
+              className="w-4 h-4"
+              checked={showPassword}
+              onChange={() => setShowPassword((prev) => !prev)} 
+            />
+            <label htmlFor="show" className="text-sm text-gray-600">
+              Show Password
+            </label>
           </div>
-
           <button
             type="submit"
             className="w-full py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition"

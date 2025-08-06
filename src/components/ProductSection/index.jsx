@@ -41,24 +41,22 @@ const ProductSection = () => {
   return (
     <div className="flex flex-col pt-24 pb-16 bg-gray-50 min-h-screen">
       <Header />
-      <div className="flex flex-1 max-w-7xl mx-auto w-full">
-        <aside className="w-64 bg-white border-r shadow-sm p-4 sticky top-24 h-fit">
+      <div className="flex flex-col md:flex-row flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <aside className="w-full md:w-64 bg-white border-r shadow-sm p-4 md:sticky md:top-24 h-fit mb-4 md:mb-0">
           <Sidebar
             categories={["All", ...data.categories.map((c) => c.name)]}
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
-
-          
         </aside>
 
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 p-2 sm:p-4 md:p-6 overflow-y-auto">
           {filteredCategories.map((category) => (
             <div key={category.name} className="mb-12">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
                 {category.name} <span className="text-green-500">›</span>
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                 {category.products.map((product) => (
                   <div
                     key={product.id}
@@ -67,7 +65,7 @@ const ProductSection = () => {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-24 h-24 object-contain mb-2"
+                      className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-2"
                     />
                     <h3 className="text-sm font-medium text-center text-gray-800">{product.name}</h3>
                     <p className="text-xs text-gray-500">{product.weight}</p>
@@ -89,4 +87,5 @@ const ProductSection = () => {
     </div>
   );
 };
+
 export default ProductSection;

@@ -9,7 +9,7 @@ const Header = () => {
   };
   const onCart = () => navigate('/cart');
   const onHome = () => navigate('/');
-
+  const onProduct = () => navigate('/products');
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
@@ -21,6 +21,7 @@ const Header = () => {
         />
         <ul className="flex gap-6 text-gray-700 font-medium">
           <li className="cursor-pointer hover:text-green-600 transition" onClick={onHome}>Home</li>
+          <li className="cursor-pointer hover:text-green-600 transition" onClick={onProduct}>Products</li>
           <li className="cursor-pointer hover:text-green-600 transition" onClick={onCart}>Cart</li>
           <li className="cursor-pointer hover:text-red-500 transition" onClick={onLogout}>Logout</li>
         </ul>
