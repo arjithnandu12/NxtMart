@@ -19,6 +19,9 @@ const CartProvider = ({ children }) => {
       }
     });
   };
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   const removeFromCart = (productId) => {
     setCartItems((prevItems) =>
@@ -31,7 +34,7 @@ const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart,clearCart }}>
       {children}
     </CartContext.Provider>
   );

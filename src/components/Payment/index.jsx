@@ -1,10 +1,14 @@
-import { useContext } from 'react';
+import { useContext,useRef } from 'react';
 import { CartContext } from '../Cartcontext';
 import Header from '../Header';
 import Footer from '../Footer';
+import { useNavigate } from 'react-router-dom';
+
 
 const Payment = () => {
-  const { cartItems } = useContext(CartContext);
+  const navigate = useNavigate();
+  const formRef = useRef(null);
+  const { cartItems,clearCart } = useContext(CartContext);
 
   const getTotal = () => {
     return cartItems.reduce((total, item) => {
@@ -16,6 +20,9 @@ const Payment = () => {
   const handlePayment = (e) => {
     e.preventDefault();
     alert('Payment Successful! 🎉');
+    clearCart()
+    formRef.current.reset();
+    navigate('/');
   };
 
   return (
@@ -56,7 +63,7 @@ const Payment = () => {
               placeholder="Enter your full name"
             />
           </div>
-
+        
           <div>
             <label className="block mb-1 font-medium text-gray-700">Email Address</label>
             <input
